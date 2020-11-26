@@ -21,4 +21,34 @@
 2. 配件销售流程
 3. 维护流程
 
+## 帐号登录
+
+无法登录则：
 sys_user表password列 请改为： 6fef297d2d6046cdbd013cf92494f0afc99f963b0ecb759f011a6d31
+
+##　ｏｐｅｎｄｊｄｋ１1　ｔｏｍｃａｔ９ 无法运行
+
+pom.xml 中增加： 
+```
+<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-core</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+```

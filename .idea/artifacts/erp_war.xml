@@ -9,21 +9,6 @@
     </properties>
     <root id="archive" name="erp.war">
       <element id="artifact" artifact-name="erp:war exploded" />
-      <element id="directory" name="WEB-INF">
-        <element id="directory" name="lib">
-          <element id="library" level="module" name="Maven: com.oracle:ojdbc14:10.2.0.4.0" module-name="erp" />
-          <element id="library" level="module" name="Maven: org.wltea:analyzer:2012_u6" module-name="erp" />
-          <element id="library" level="module" name="Maven: net.coobird:thumbnailator:0.4.2" module-name="erp" />
-          <element id="library" level="module" name="Maven: com.ckfinder:apache-ant-zip:2.3" module-name="erp" />
-          <element id="library" level="module" name="Maven: com.ckfinder:ckfinder:2.3" module-name="erp" />
-          <element id="library" level="module" name="Maven: com.ckfinder:ckfinderplugin-fileeditor:2.3" module-name="erp" />
-          <element id="library" level="module" name="Maven: com.ckfinder:ckfinderplugin-imageresize:2.3" module-name="erp" />
-          <element id="library" level="module" name="Maven: bitwalker:UserAgentUtils:1.13" module-name="erp" />
-        </element>
-        <element id="directory" name="classes">
-          <element id="jpa-descriptors" facet="erp/jpa/JPA" />
-        </element>
-      </element>
     </root>
   </artifact>
 </component>
