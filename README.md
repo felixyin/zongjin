@@ -25,6 +25,11 @@
 
 无法登录则：
 sys_user表password列 请改为： 6fef297d2d6046cdbd013cf92494f0afc99f963b0ecb759f011a6d31
+```
+update items_zongjin.sys_user
+set password='6fef297d2d6046cdbd013cf92494f0afc99f963b0ecb759f011a6d31'
+where 1 = 1
+```
 
 ##　ｏｐｅｎｄｊｄｋ１1　ｔｏｍｃａｔ９ 无法运行
 

@@ -645,26 +645,27 @@
             <version>2.3.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.3.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-impl</artifactId>
-            <version>2.3.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-core</artifactId>
-            <version>2.3.0</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>activation</artifactId>
-            <version>1.1.1</version>
-        </dependency>
+<!--        解决openjdk11&tomcat9下无法运行问题-->
+<!--        <dependency>-->
+<!--            <groupId>javax.xml.bind</groupId>-->
+<!--            <artifactId>jaxb-api</artifactId>-->
+<!--            <version>2.3.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.sun.xml.bind</groupId>-->
+<!--            <artifactId>jaxb-impl</artifactId>-->
+<!--            <version>2.3.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.sun.xml.bind</groupId>-->
+<!--            <artifactId>jaxb-core</artifactId>-->
+<!--            <version>2.3.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>javax.activation</groupId>-->
+<!--            <artifactId>activation</artifactId>-->
+<!--            <version>1.1.1</version>-->
+<!--        </dependency>-->
 
 
     </dependencies>
@@ -1111,7 +1112,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-antrun-plugin</artifactId>
-                        <version>1.7</version>
+                        <version>1.8</version>
                         <configuration>
                             <target>
 
@@ -1173,35 +1174,31 @@
         </profile>
     </profiles>
 
-
-    <!-- 设定主仓库，按设定顺序进行查找。 -->
-    <repositories>
-
+    <distributionManagement>
+        <snapshotRepository>
+            <id>qtrj-nexus</id>
+            <url>http://qtrj.i234.me:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
         <repository>
-            <id>jeesite-repos</id>
-            <name>Jeesite Repository</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+            <id>
+                qtrj-nexus
+            </id>
+            <url>http://qtrj.i234.me:8081/repository/maven-releases/</url>
         </repository>
+    </distributionManagement>
 
+    <repositories>
         <repository>
-            <id>spring-snapshots</id>
-            <name>Spring Snapshots</name>
-            <url>https://repo.spring.io/snapshot</url>
+            <id>
+                qtrj-nexus
+            </id>
+            <name>maven 私服</name>
+            <url>http://qtrj.i234.me:8081/repository/maven-public/</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
         </repository>
-
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
     </repositories>
-
 
     <!-- 设定插件仓库 -->
     <pluginRepositories>
